@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include header.html %}
+  </head>
+  <body>
+    {% include skippy.html %}
+
+    {% include docs-navbar.html %}
+
+    {{ content }}
+
+    {% partialCached footer.html %}
+    {% partialCached scripts.html %}
+  </body>
+</html>

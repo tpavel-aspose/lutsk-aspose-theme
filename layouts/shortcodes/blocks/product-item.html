@@ -1,0 +1,4 @@
+<a class='product-item {{ .Get "class" }}' href='{{ .Get "href" }}' {{ if .Parent.Get "additionalTitle"}} style="float: none" {{ end }}>
+	{{ .Get "title" | markdownify }}
+</a>
+

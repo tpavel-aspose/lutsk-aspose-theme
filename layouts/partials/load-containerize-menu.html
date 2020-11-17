@@ -1,0 +1,7 @@
+<script>
+    {{ if (in .Site.BaseURL "aspose.cloud") }}
+      LoadMenu("AsposeCloud");
+    {{ else }}
+      LoadMenu("Aspose");
+    {{ end }}
+</script>
