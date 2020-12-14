@@ -51,10 +51,10 @@
     <ul class="td-sidebar-nav__section">
       <li class="td-sidebar-nav__section-title">
         {{ if eq (len $pages) 0 }}
-            <img src='{{ $circle.RelPermalink }}' alt = "circle" class="icon icon-dot" />
+            <div class="icon space-without-icon"></div>
         {{ else }}
             {{ if $show }}              
-            <img src='{{ $caretDown.RelPermalink }}' alt = "caret-down" class="icon" />
+            <img src='{{ $caretDown.RelPermalink }}' alt = "caret-down" class="icon open-icon" />
             {{ else }}
             <img src='{{ $caretDown.RelPermalink }}' alt = "caret-closed" class="icon closed-icon" />
             {{ end }}

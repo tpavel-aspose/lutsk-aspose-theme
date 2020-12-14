@@ -32,3 +32,9 @@
         padding-bottom: 2rem;
     }
 }
+
+.set-min-height {
+    
+    // 256px is a height of the footer
+    min-height: calc(100vh - 265px)
+}

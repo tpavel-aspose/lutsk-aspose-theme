@@ -1,21 +1,13 @@
-{{ $tab := .Get "tabNum" }}
-{{ $tabID := print (.Parent.Get "tabID") $tab }}
-{{ $tabName := (print "tabName" $tab) }}
+{{ if .Parent }}
+  {{ $tabNum := .Get "tabNum" }}
+  {{ $tabNameId := printf "tabName%s" $tabNum }}
+  {{ $tabName := .Parent.Get $tabNameId }}
+  {{ $group := printf "tabs-%s" (.Parent.Get "tabID") }}
+  {{ if not (.Parent.Scratch.Get $group) }}
+    {{ .Parent.Scratch.Set $group slice }}
+  {{ end }}
 
-{{ if eq $tab "1" }}
-
-<div class="tab-pane fade show active" id="tab{{ $tabID }}" role="tabpanel" aria-labelledby="nav-{{ $tabName }}">
-
-	{{ $.Inner | markdownify }}
-
-</div>
-
+  {{ .Parent.Scratch.Add $group (dict "Name" $tabName "Content" .Inner) }}
 {{ else }}
-
-<div class="tab-pane fade" id="tab{{ $tabID }}" role="tabpanel" aria-labelledby="nav-{{ $tabName }}">
-
-	{{ $.Inner | markdownify }}
-
-</div>
-
-{{ end }}
+  {{ errorf "%q: 'tab' shortcode must be inside 'tabs' shortcode" .Page.Path }}
+{{ end}}

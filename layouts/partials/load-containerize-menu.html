@@ -2,6 +2,10 @@
     {{ if (in .Site.BaseURL "aspose.cloud") }}
       LoadMenu("AsposeCloud");
     {{ else }}
-      LoadMenu("Aspose");
+      {{ if (in .Site.BaseURL "conholdate.com") }}
+        LoadMenu("Conholdate");
+      {{ else }}
+        LoadMenu("Aspose");
+      {{ end }}
     {{ end }}
 </script>

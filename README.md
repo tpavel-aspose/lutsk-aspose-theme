@@ -51,3 +51,45 @@ This shortcode is used to create an interactive widget that the user can open an
         Any text or tags, which you want to hide from appearing in Google snippets.
     {{< /nosnippet >}}
 ```
+
+7. **Tab shortocde:**
+
+*tabTotal* parameter is optional, the shortcode will work without it either.
+```
+{< tabs [tabTotal="3"] tabID="uniqueid" tabName1="MacOS" tabName2="Linux" tabName3="Windows" >}}
+    {{< tab tabNum="1" >}}
+
+    You can use **Markdown** *formatting* in tabs.
+    Some code example.
+
+    {{< /tab >}}
+
+    {{< tab tabNum="2" >}}
+
+    # Linux
+
+    This is tab **Linux** content.
+
+    {{< /tab >}}
+
+    {{< tab tabNum="3" >}}
+
+    # Windows
+
+    This is tab **Windows** content.
+
+    {{< /tab >}}
+{{< /tabs >}}
+```
+
+8. **Run Shortcode**
+
+Run Shortcode adds a button. When you click on it you will be redirected to the page that you pass as a *href* parameter.
+
+For example, you can use it under the code block to refer to Swagger documentation.
+
+**Notice, this shortcode only redirect to another page!**
+
+```
+    {{< run href="https://www.aspose.com" >}}
+```

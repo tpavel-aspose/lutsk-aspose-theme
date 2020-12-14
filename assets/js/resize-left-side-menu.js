@@ -23,8 +23,11 @@ function setStyles(objectId, classToAdd) {
   }
 }
 
+function setGutterHeight() {
+  $(gutterId).css('height', $(rightSideId).height());
+}
+
 function calcLeftFotGutter() {
-  var leftSideWidthPercent = $(leftSideId).width() / $(window).width() * 100;
   
   return GUTTER_SIZE + $(leftSideId).width() + 15 + 'px';
 }
@@ -49,7 +52,7 @@ function setGutterStyles(gutterElementId) {
   $(gutterElementId).show();
   $(gutterElementId).css('padding', `0.01rem`);
   $(gutterElementId).css('left', calcLeftFotGutter());
-  $(gutterElementId).css('height', $(leftSideId).css('height'));
+  setGutterHeight();
   $(gutterElementId).css('cursor', 'ew-resize');
 }
 
@@ -83,6 +86,7 @@ var split = function (leftSideWidth, rightSideWidth) {
   }, 
   onDragEnd: function(size, gutterSize) {
     calcGutterPosition();
+    setGutterHeight();
     saveLeftSideWidth();
   },
     gutter: (index, direction) => {
@@ -112,5 +116,5 @@ if($(leftSideId)!= null & $(rightSideId)!= null) {
   $(leftSideId).show();
   $(rightSideId).show();
 }
-
+setGutterHeight();
 setTimeout($(gutterId).css('left', calcLeftFotGutter()), 1000);

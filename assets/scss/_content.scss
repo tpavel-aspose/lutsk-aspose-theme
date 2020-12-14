@@ -33,6 +33,7 @@
 
     img {
         @extend .img-fluid;
+        margin-bottom: $space-after-image;
     }
 
     > table {

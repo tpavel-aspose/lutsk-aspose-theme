@@ -96,6 +96,14 @@ $h4-font-size: 1.2rem !default;
 $h5-font-size: $font-size-base * 1.15 !default;
 $h6-font-size: $font-size-base !default;
 
+// Heading margins
+
+$h2-margin-top: 2rem;
+$h3-margin-top: 2rem;
+$h4-margin-top: 2rem;
+$h5-margin-top: 2rem;
+$h6-margin-top: 2rem;
+
 // Display styles
 
 $display1-weight: $font-weight-bold !default;
@@ -129,3 +137,6 @@ $navbar-dark-disabled-color: rgba($white, 0.25) !default;
 
 // The yiq lightness value that determines when the lightness of color changes from "dark" to "light".
 $yiq-contrasted-threshold: 200 !default;
+
+// img
+$space-after-image: 1rem;

@@ -12,10 +12,11 @@
 {{ $ToCHide := resources.Get "js/ToC-hide.js" | resources.Minify  }}
 {{ $copyBtn := resources.Get "js/copy-btn.js" | resources.Minify  }}
 {{ $focusOnCurrentPageInLeftMenu := resources.Get "js/focus-on-current-page-in-left-menu.js" | resources.Minify  }}
-{{ $js := (slice $dropdownJs $splitMin $resizeLeftsideMenu $focusOnCurrentPageInLeftMenu $jsAnchor $mobileToMenu $ToCHide $copyBtn) | resources.Concat "js/main.js" }}
+{{ $js := (slice $dropdownJs $splitMin $focusOnCurrentPageInLeftMenu $jsAnchor $mobileToMenu $ToCHide $copyBtn $resizeLeftsideMenu) | resources.Concat "js/main.js" }}
 {{ $js := $js | resources.Minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 <script src="https://menu.containerize.com/Scripts/Containerize.Menu.min.js"></script>
 <link href="https://cms.admin.containerize.com/templates/aspose/css/AsposePtyLtdMenu.css"
 rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cms.admin.containerize.com/templates/aspose/css/font-awesome.css" type="text/css" />
+<link rel="stylesheet" href="https://cms.admin.containerize.com/templates/conholdate/css/conholdate.css?v1.5" type="text/css">
