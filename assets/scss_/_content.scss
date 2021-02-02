@@ -57,7 +57,7 @@
 
 
     > pre, > .highlight, > .lead, > h1, > h2, > ul, > ol, > p, > blockquote, > dl dd, .footnotes, > .alert {
-        @extend .td-max-width-on-larger-screens !optional;
+        @extend .td-max-width-on-larger-screens;
     }
 
     .alert:not(:first-child) {
