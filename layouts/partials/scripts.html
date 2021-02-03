@@ -13,7 +13,7 @@
 {{ $copyBtn := resources.Get "js/copy-btn.js"   }}
 {{ $focusOnCurrentPageInLeftMenu := resources.Get "js/focus-on-current-page-in-left-menu.js"   }}
 {{ $js := (slice $dropdownJs $splitMin $focusOnCurrentPageInLeftMenu $jsAnchor $mobileToMenu $ToCHide $copyBtn $resizeLeftsideMenu) | resources.Concat "js/main.js" }}
-{{ $js := $js  | fingerprint }}
+{{ $js := $js  }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
 <script src="https://menu.containerize.com/Scripts/Containerize.Menu.min.js"></script>
 <link href="https://cms.admin.containerize.com/templates/aspose/css/AsposePtyLtdMenu.css"
