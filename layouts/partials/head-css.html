@@ -1,4 +1,7 @@
 
 {{ $css := resources.Get "css/main.css" }}
-<link rel="preload" href="{{ $css.RelPermalink }}" as="style">
-<link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">
+<!--<link rel="preload" href="{{ $css.RelPermalink }}" as="style">-->
+<!--<link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">-->
+
+<link rel="preload" href="/css/main.css" as="style">
+<link href="/css/main.css" rel="stylesheet" integrity="">
