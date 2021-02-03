@@ -1,4 +1,6 @@
+
 var elementToScrollTo = $('.active.td-sidebar-link');
+
 if (elementToScrollTo.height() != null) {
     var elementHeight = elementToScrollTo.height();
     var k = 3;
