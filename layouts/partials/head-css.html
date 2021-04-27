@@ -1,8 +1,6 @@
 
-{{ $cssMain := resources.Get "css/main.css" }}
-<!--{{ $scssMain := "scss/main.scss"}}-->
+{{ $scssMain := "scss/main.scss"}}
 
-<!--{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | resources.Minify | fingerprint }}-->
-{{ $css := resources.Get $cssMain | fingerprint }}
+{{ $css := resources.Get $scssMain | toCSS (dict "enableSourceMap" false) | postCSS | resources.Minify | fingerprint }}
 <link rel="preload" href="{{ $css.RelPermalink }}" as="style">
 <link href="{{ $css.RelPermalink }}" rel="stylesheet" integrity="{{ $css.Data.integrity }}">

@@ -1,12 +1,10 @@
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+<script 
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous">
 </script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous">
-</script>
 
+{{ $dropdownJs := resources.Get "vendor/bootstrap/dist/js/bootstrap.min.js" }}
 {{ $jsAnchor := resources.Get "js/anchor.js" | resources.Minify }}
 {{ $resizeLeftsideMenu := resources.Get "js/resize-left-side-menu.js" | resources.Minify  }}
 {{ $splitMin := resources.Get "js/split.min.js" | minify  }}
@@ -14,11 +12,10 @@
 {{ $ToCHide := resources.Get "js/ToC-hide.js" | resources.Minify  }}
 {{ $copyBtn := resources.Get "js/copy-btn.js" | resources.Minify  }}
 {{ $focusOnCurrentPageInLeftMenu := resources.Get "js/focus-on-current-page-in-left-menu.js" | resources.Minify  }}
-{{ $js := (slice $splitMin $focusOnCurrentPageInLeftMenu $jsAnchor $mobileToMenu $ToCHide $copyBtn $resizeLeftsideMenu) | resources.Concat "js/main.js" }}
+{{ $productsStickyFloatingRightMenu := resources.Get "js/products-sticky-floating-menu.js" | resources.Minify  }}
+{{ $js := (slice $dropdownJs $splitMin $focusOnCurrentPageInLeftMenu $jsAnchor $mobileToMenu $ToCHide $copyBtn $resizeLeftsideMenu $productsStickyFloatingRightMenu) | resources.Concat "js/main.js" }}
 {{ $js := $js | resources.Minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
-
-
 <script src="https://menu.containerize.com/Scripts/Containerize.Menu.min.js"></script>
 <link href="https://cms.admin.containerize.com/templates/aspose/css/AsposePtyLtdMenu.css"
 rel="stylesheet" type="text/css" />

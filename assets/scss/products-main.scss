@@ -1,0 +1,287 @@
+.products-aspose-com {
+    font-family: "Open Sans", sans-serif;
+
+    .brdr-spacer {
+        margin: 45px 0 65px;
+        float: left;
+        width: 100%;
+        border-bottom:1px solid #eaeaea
+    }
+
+    .col-lg-9,  .col-lg-3 {
+        float: left;
+    }
+
+    .product-bar h2 a:focus,  .product-bar h2 a:hover {
+        color: #3071a9!important;
+        opacity: .8;
+        text-decoration: none!important;
+    }
+
+    .pf-urls {
+        float: left;
+        margin-top: 25px;
+        clear: both;
+        display: block;
+    }
+
+    .product-bar h2 {
+        font-size: 36px;
+        clear: both;
+        letter-spacing: -.01em;
+        margin: 0 !important;
+    }
+
+    .product-bar h2 a {
+        font-size: 30px;
+        color: #3d8ec4;
+        font-weight: 500;
+        padding: 0;
+        margin: 0 0 15px;
+    }
+
+    .product-bar em {
+        letter-spacing: -.01em;
+        //margin: 0 0;
+        font-size: 16px;
+        line-height: 24px;
+        font-style: normal;
+        display: block;
+        clear: both;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .product-bar .col-lg-12 a,  .product-bar .col-lg-12 a em {
+        transition: all .3s ease;
+    }
+
+    .product-bar a {
+        min-width: 200px!important;
+    }
+
+    .product-bar a {
+        display: inline-block;
+        margin: 5px 8px 5px 0;
+        font-size: 11px;
+        padding: 10px;
+        color: #333;
+        text-align: left;
+        min-width: 200px;
+    }
+
+    .app-link {
+        border: 1px solid #c7e3ec !important;
+        float: left;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        margin-bottom: 0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 0;
+    }
+
+    .product-bar a em {
+        font-size: 16px;
+        display: block;
+        clear: both;
+        font-style: normal;
+        font-weight: 700;
+    }
+
+    .product-bar a:hover,  .product-bar a:hover em {
+        color: #3d8ec4!important;
+        transition: all .3s ease;
+    }
+
+    .product-bar .pf-urls a:hover
+    {
+        box-shadow: 0 1px 10px #ccc;
+    }
+
+    .spacer
+    {
+        margin-bottom: 65px;
+    }
+
+    // Floating Menu
+    .rhs-box {
+        background: #fff;
+        box-shadow: 0 3px 10px -5px #444;
+        width: 270px;
+    }
+
+    .stickytopheight {
+        margin-top: -105px;
+        position: absolute;
+        height: 60px;
+    }
+
+    .rhs-box .api-link {
+        font-size: 13px !important;
+        padding: 0 0 10px !important;
+    }
+
+    .rhs-box .rhs-section {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .rhs-box .api-link h3 {
+        background: #3071a9;
+        color: #fff;
+        padding: 10px 15px;
+        margin: 0 0 10px;
+        font-size: 16px;
+        font-weight: 100;
+    }
+
+    .product-bar h3 {
+        font-size: 13px;
+        font-weight: 100;
+        color: #888;
+    }
+
+    .rhs-section.api-link a {
+        min-width: 49%!important;
+        margin: 0!important;
+        padding: 8px 10px;
+        color: #7c7c7c;
+        font-size: 13px;
+    }
+
+    .product-bar h2 a {
+        font-size: 30px;
+        color: #3d8ec4;
+        font-weight: 100;
+        padding: 0;
+        margin: 0 0 15px;
+        float: left;
+    }
+
+    a.anchor {
+        min-width: 0!important;
+        width: 0!important;
+        max-width: 0!important;
+    }
+
+    .rhs-box {
+        background: #fff;
+        box-shadow: 0 3px 10px -5px #444;
+        width: 270px;
+    }
+
+    .rhs-fixed {
+        position: fixed!important;
+        background: #fff;
+        width: 270px!important;
+        z-index: 9;
+        top: 80px;
+        margin-top: 0!important;
+    }
+
+    .activeurl {
+        color: #3d8ec4!important;
+    }
+
+}
+
+.topsmallheader .productsapp .imagebg {
+    background: url(https://cms.admin.containerize.com/templates/asposeapp/images/bg/asposeappheader.jpg) center center no-repeat fixed!important;
+    background-size: cover!important;
+}
+
+.imagebg {
+    background: url(https://cms.admin.containerize.com/templates/aspose/App_Themes/V3/images/bg/code.jpg) center center no-repeat fixed !important;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+    background-size: cover!important;
+    height: inherit!important;
+    width: 100vw;
+    margin-left: -15px;
+
+    a {
+        padding: 12px 22px;
+        text-shadow: 0 2px 1px rgba(0,0,0,.34);
+        font-size: 22px!important;
+        font-weight: 400!important;
+        color: #fff;
+        border-radius: 0!important;
+        background: #dc4342 !important;      
+        background-color: #dc4342 !important;
+        border-color: #d43f3a !important;
+    }
+
+    .btn-danger:hover {
+        color: #fff;
+        background-color: #c9302c !important;
+        border-color: #ac2925 !important;
+    }
+}
+
+.topsmallheader {
+    background: url(//aspose.github.io/img/header1.png) center center #439cda;
+    // padding: 10px 15px;
+}
+
+.imagebg h1 {
+    margin: 2% 0 3%!important;
+    font-size: 52px!important;
+    text-shadow: 0 3px 0 rgba(0,0,0,.1)!important;
+}
+
+.imagebg h1, .imagebg h4 {
+    font-family: Lato,sans-serif;
+}
+
+.topsmallheader-hd-section h1 {
+    font-weight: 300!important;
+    margin-top: 2%!important;
+    font-size: 38px;
+    color: #fff;
+}
+
+.topsmallheader-hd-section {
+    text-align: center;
+    padding: 0;
+    color: #fff;
+}
+
+.imagebg h4 {
+    line-height: 1.3;
+    color: #fafafa;
+    width: 65%!important;
+    margin: 20px auto 30px!important;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.backtop {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 20px;
+    background-image: url(https://cms.admin.containerize.com/templates/aspose/App_Themes/V3/images/icons/backtop.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    bottom: 50px;
+}
+
+.backtop:hover {
+    background-position: 0 -51px;
+}

@@ -5,7 +5,11 @@
       {{ if (in .Site.BaseURL "conholdate.com") }}
         LoadMenu("Conholdate");
       {{ else }}
-        LoadMenu("Aspose");
+        {{ if (in .Site.BaseURL "aspose.app") }}
+          LoadMenu("AsposeApp");
+        {{ else }}
+          LoadMenu("Aspose");
+        {{ end }}
       {{ end }}
     {{ end }}
 </script>

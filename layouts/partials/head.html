@@ -1,10 +1,14 @@
 <!-- Google Tag Manager -->
 {{ $GTMId := .Site.Params.gtm.aspose_id }}
-{{ if (in .Site.BaseURL "conholdate.com") }}
-  {{ $GTMId = .Site.Params.gtm.conholdate_id }}
-{{ else }} 
-  {{ if (in .Site.BaseURL "aspose.cloud") }} 
-    {{ $GTMId = .Site.Params.gtm.cloud_id }}
+{{ if (in .Site.BaseURL "aspose.app") }}
+  {{ $GTMId = .Site.Params.gtm.products_app_id }}
+{{ else }}
+  {{ if (in .Site.BaseURL "conholdate.com") }}
+    {{ $GTMId = .Site.Params.gtm.conholdate_id }}
+  {{ else }} 
+    {{ if (in .Site.BaseURL "aspose.cloud") }} 
+      {{ $GTMId = .Site.Params.gtm.cloud_id }}
+    {{ end }}
   {{ end }}
 {{ end }}
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

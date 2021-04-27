@@ -1,8 +1,8 @@
 const GUTTER_SIZE = 1;
 const MIN_LEFTBAR_SIZE = 12;
 const MAX_LEFTBAR_SIZE = 32;
-const DEFAULT_LEFT_SIDE_WIDTH = 25;
-const DEFAULT_RIGHT_SIDE_WIDTH = 75;
+const DEFAULT_LEFT_SIDE_WIDTH = 30;
+const DEFAULT_RIGHT_SIDE_WIDTH = 100 - DEFAULT_LEFT_SIDE_WIDTH;
 
 var leftSideId = '#left-side-bar-menu';
 var rightSideId = '#right-side';
