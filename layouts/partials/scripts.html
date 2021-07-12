@@ -5,6 +5,7 @@
 </script>
 
 {{ $dropdownJs := resources.Get "vendor/bootstrap/dist/js/bootstrap.min.js" }}
+{{ $popperJs := resources.Get "js/popper.min.js" }}
 {{ $jsAnchor := resources.Get "js/anchor.js" | resources.Minify }}
 {{ $resizeLeftsideMenu := resources.Get "js/resize-left-side-menu.js" | resources.Minify  }}
 {{ $splitMin := resources.Get "js/split.min.js" | minify  }}
@@ -13,11 +14,17 @@
 {{ $copyBtn := resources.Get "js/copy-btn.js" | resources.Minify  }}
 {{ $focusOnCurrentPageInLeftMenu := resources.Get "js/focus-on-current-page-in-left-menu.js" | resources.Minify  }}
 {{ $productsStickyFloatingRightMenu := resources.Get "js/products-sticky-floating-menu.js" | resources.Minify  }}
-{{ $js := (slice $dropdownJs $splitMin $focusOnCurrentPageInLeftMenu $jsAnchor $mobileToMenu $ToCHide $copyBtn $resizeLeftsideMenu $productsStickyFloatingRightMenu) | resources.Concat "js/main.js" }}
+{{ $testimonialcarousel := resources.Get "js/testimonialcarousel.js" | resources.Minify  }}
+{{ $diagramCarousel := resources.Get "js/diagram-carousel.js" | resources.Minify  }}
+{{ $clipboardMin := resources.Get "js/clipboard.min.js" | resources.Minify  }}
+{{ $productClipboardDownloadBtn := resources.Get "js/product-clipboard-download-btn.js" | resources.Minify  }}
+{{ $highlightjs := resources.Get "js/highlight.js" | resources.Minify  }}
+
+{{ $js := "" }}
+{{ if (and (in .Site.BaseURL "products") (in .Site.BaseURL "aspose.com")) }}
+  {{ $js = (slice $popperJs $dropdownJs $productsStickyFloatingRightMenu $testimonialcarousel $diagramCarousel $clipboardMin $productClipboardDownloadBtn $highlightjs) | resources.Concat "js/main.js" }}
+{{ else }}
+  {{ $js = (slice $popperJs $dropdownJs $splitMin $focusOnCurrentPageInLeftMenu $jsAnchor $mobileToMenu $ToCHide $copyBtn $resizeLeftsideMenu) | resources.Concat "js/main.js" }}
+{{ end }}
 {{ $js := $js | resources.Minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="https://menu.containerize.com/Scripts/Containerize.Menu.min.js"></script>
-<link href="https://cms.admin.containerize.com/templates/aspose/css/AsposePtyLtdMenu.css"
-rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://cms.admin.containerize.com/templates/aspose/css/font-awesome.css" type="text/css" />
-<link rel="stylesheet" href="https://cms.admin.containerize.com/templates/conholdate/css/conholdate.css?v1.5" type="text/css">

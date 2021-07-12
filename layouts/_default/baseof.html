@@ -4,7 +4,7 @@
     {{if in .Permalink "/404.html"}}
       {{ partial "head.html" . }}
     {{ else }}
-      {{ partialCached "head.html" . }}
+      {{ partial "head.html" . }}
     {{ end }}
   </head>
   <body class="td-{{ .Kind }}">
@@ -19,6 +19,6 @@
     </div>
     {{ partialCached "scripts.html" . }}
     <div id='DynabicMenuFooter'></div>
-    {{ partial "load-containerize-menu.html" . }}
+    
   </body>
 </html>

@@ -1,16 +1,18 @@
 <!-- Google Tag Manager -->
 {{ $GTMId := .Site.Params.gtm.aspose_id }}
-{{ if (in .Site.BaseURL "aspose.app") }}
-  {{ $GTMId = .Site.Params.gtm.products_app_id }}
-{{ else }}
-  {{ if (in .Site.BaseURL "conholdate.com") }}
-    {{ $GTMId = .Site.Params.gtm.conholdate_id }}
-  {{ else }} 
-    {{ if (in .Site.BaseURL "aspose.cloud") }} 
-      {{ $GTMId = .Site.Params.gtm.cloud_id }}
-    {{ end }}
-  {{ end }}
+{{ with (in .Site.BaseURL "aspose.app") }}
+  {{ $GTMId = $.Site.Params.gtm.products_app_id }}
 {{ end }}
+{{ with (in .Site.BaseURL "conholdate.com") }}
+  {{ $GTMId = $.Site.Params.gtm.conholdate_id }}
+{{ end }}
+{{ with (in .Site.BaseURL "aspose.cloud") }}
+  {{ $GTMId = $.Site.Params.gtm.cloud_id }}
+{{ end }}
+{{ with (in .Site.BaseURL "codeporting.com") }}
+  {{ $GTMId = $.Site.Params.gtm.codeporting_id }}
+{{ end }}
+
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -18,6 +20,10 @@
   })(window,document,'script','dataLayer', {{ $GTMId }});
 </script>
 <!-- End Google Tag Manager -->
+
+<!-- Start Containerize.Menu  -->
+{{ partial "load-containerize-menu.html" . }}
+<!-- Start Containerize.Menu -->
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,11 +38,19 @@
   {{ if in (.Permalink) "404.html" }}
     {{ .Site.Params.title_404_page }}
   {{else}}
-    {{ if .IsHome }}
-      {{ .Site.Title }}
+    {{ if (and (in .Site.BaseURL "products") (in .Site.BaseURL "aspose.com")) }}
+      {{ .Page.Params.title }}
     {{ else }}
-      {{ with .Title }}{{ . }} | {{ end }}  
-      {{ template "find-root-page" (dict "page" . "currentSection" .CurrentSection "siteTitle" .Site.Title) }} 
+      {{ if .IsHome }}
+        {{ if .Page.Params.title }}
+          {{ .Page.Params.title }}
+        {{ else }}
+          {{ .Site.Title }}
+        {{ end }}
+      {{ else }}
+        {{ with .Title }}{{ . }} | {{ end }}  
+        {{ template "find-root-page" (dict "page" . "currentSection" .CurrentSection "siteTitle" .Site.Title) }} 
+      {{ end }}
     {{ end }}
   {{end}}
 </title>
